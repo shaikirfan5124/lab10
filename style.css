@@ -1,13 +1,17 @@
 :root {
-    --bg-dark: #0b1120;
-    --card-bg: #111827;
-    --border: #1f2937;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
+    --bg-light: #ffffff;
+    --card-bg: #f8fafc;
+    --surface-sub: #f1f5f9;
+    --border: #e2e8f0;
+    --border-strong: #cbd5e1;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
     --emerald: #10b981;
     --emerald-hover: #059669;
+    --emerald-text: #047857;
     --rose: #f43f5e;
     --rose-hover: #e11d48;
+    --rose-text: #be123c;
 }
 
 * {
@@ -18,7 +22,7 @@
 
 body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: radial-gradient(circle at top, #1e293b 0%, var(--bg-dark) 65%);
+    background: radial-gradient(circle at top, #f1f5f9 0%, var(--bg-light) 65%);
     color: var(--text-main);
     min-height: 100vh;
     padding: 20px;
@@ -34,12 +38,13 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(16, 185, 129, 0.12);
+    background: rgba(16, 185, 129, 0.1);
     border: 1px solid rgba(16, 185, 129, 0.35);
-    color: #a7f3d0;
+    color: var(--emerald-text);
     padding: 8px 16px;
     border-radius: 999px;
     font-size: 14px;
+    font-weight: 500;
 }
 
 .dot {
@@ -63,6 +68,7 @@ body {
     font-size: 26px;
     letter-spacing: -0.02em;
     margin-bottom: 6px;
+    color: var(--text-main);
 }
 
 .brand p {
@@ -71,9 +77,9 @@ body {
 }
 
 .alert-banner {
-    background: rgba(244, 63, 94, 0.15);
-    border: 1px solid var(--rose);
-    color: #fecdd3;
+    background: rgba(244, 63, 94, 0.08);
+    border: 1px solid rgba(244, 63, 94, 0.4);
+    color: var(--rose-text);
     padding: 12px 14px;
     border-radius: 8px;
     font-size: 13px;
@@ -85,7 +91,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
-    background: var(--card-bg);
+    background: var(--surface-sub);
     padding: 6px;
     border-radius: 10px;
     border: 1px solid var(--border);
@@ -110,21 +116,22 @@ body {
 
 .nav-btn.active {
     background: var(--emerald);
-    color: #022c22;
+    color: #ffffff;
 }
 
 .glass-card {
-    background: var(--card-bg);
+    background: var(--bg-light);
     border: 1px solid var(--border);
     border-radius: 14px;
     padding: 28px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
 }
 
 .glass-card h2 {
     font-size: 19px;
     margin-bottom: 18px;
     text-align: center;
+    color: var(--text-main);
 }
 
 .sub-note {
@@ -137,6 +144,7 @@ body {
 label {
     display: block;
     font-size: 13px;
+    font-weight: 500;
     color: var(--text-muted);
     margin-bottom: 6px;
 }
@@ -145,8 +153,8 @@ input {
     width: 100%;
     padding: 12px 14px;
     margin-bottom: 16px;
-    background: #0f172a;
-    border: 1px solid #334155;
+    background: var(--card-bg);
+    border: 1px solid var(--border-strong);
     border-radius: 8px;
     color: var(--text-main);
     font-size: 15px;
@@ -155,6 +163,7 @@ input {
 
 input:focus {
     border-color: var(--emerald);
+    background: var(--bg-light);
 }
 
 .btn {
@@ -170,7 +179,7 @@ input:focus {
 
 .btn-emerald {
     background: var(--emerald);
-    color: #022c22;
+    color: #ffffff;
 }
 
 .btn-emerald:hover {
@@ -188,12 +197,12 @@ input:focus {
 
 .btn-outline {
     background: transparent;
-    border: 1px solid #334155;
+    border: 1px solid var(--border-strong);
     color: var(--text-main);
 }
 
 .btn-outline:hover {
-    background: #1e293b;
+    background: var(--surface-sub);
 }
 
 .state-box {
@@ -212,12 +221,12 @@ input:focus {
 }
 
 .metric-badge {
-    background: #0f172a;
-    border: 1px solid #334155;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     padding: 12px;
     border-radius: 8px;
     font-weight: 600;
-    color: #34d399;
+    color: var(--emerald-text);
     margin-bottom: 18px;
 }
 
@@ -229,8 +238,8 @@ input:focus {
 }
 
 .clock-item {
-    background: #0f172a;
-    border: 1px solid #334155;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 12px 8px;
     text-align: center;
@@ -245,7 +254,7 @@ input:focus {
 
 .clock-item strong {
     font-size: 14px;
-    color: #34d399;
+    color: var(--emerald-text);
 }
 
 .auth-banner {
@@ -258,15 +267,15 @@ input:focus {
 }
 
 .auth-granted {
-    background: rgba(16, 185, 129, 0.15);
-    border: 1px solid var(--emerald);
-    color: #6ee7b7;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: var(--emerald-text);
 }
 
 .auth-denied {
-    background: rgba(244, 63, 94, 0.15);
-    border: 1px solid var(--rose);
-    color: #fda4af;
+    background: rgba(244, 63, 94, 0.08);
+    border: 1px solid rgba(244, 63, 94, 0.4);
+    color: var(--rose-text);
 }
 
 .hidden {
